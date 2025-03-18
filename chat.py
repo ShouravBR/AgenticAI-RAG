@@ -68,7 +68,15 @@ async def main():
     # create context
     ctx = Context(agent)
 
-    query = "What was the author's major in college? Also, what's 7 * 8? Then multiply 2 with the result."
+    examples = [
+        "What was the author's major in college?"
+        "Also, what's 7 * 8? Then multiply 2 with the result."
+    ]
+
+    print('This is a chatbot to help with do math and find information from a text document. Type "exit" to stop.')
+    print('Try asking:')
+    for e in examples:
+        print(e)
 
     response = await agent.run(query, ctx=ctx)
     print(response)
